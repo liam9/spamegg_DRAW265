@@ -1,0 +1,42 @@
+Original algorithm
+	
+	1. start with a line
+	
+	2. scale the line by 1/2^(1/2)
+
+	3. rotate the line by -45 degrees around the start of the line
+	
+	4. add a copy of the line, rotated 90 degrees around the end of the original line
+
+		(after the first itteration it will appear as if the original line was the 
+			hypotenuse of the 2 new lines)	
+	
+Algorithm for determining each turn in a dragon curve:
+
+	1. Add a right turn to the string
+
+	2. Take the original string and flip it backward (first character last, last first)
+
+	3. Take the flipped version and switch all the rights to lefts and the lefts to rights
+
+	4. Add the flipped version to the new string we made in the first step
+	
+Example:
+	
+	1. RRLRRLL + R = RRLRRLLR
+
+	2. RRLRRLL flipped = LLRRLRR
+
+	3. LLRRLRR switched = RRLLRLL
+
+	4. RRLRRLLR + RRLLRLL = RRLRRLLRRRLLRLL
+	
+
+Or you can think about it in terms of unfloding:
+
+	1. start with a line or hook shape
+	
+	2. make a copy of the shape, rotate it 90 degrees counter clockwise and attach 
+				it to the end of the shape
+		
+	3. repeat step 2 with new shape
